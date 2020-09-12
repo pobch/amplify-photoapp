@@ -33,14 +33,15 @@ function Posts() {
     )
     setPosts(posts)
   }
+
   return (
     <div>
       <h2 style={heading}>Posts</h2>
       {posts.map((post) => {
         return (
-          <div key={post.id}>
+          <div key={post.id} style={postContainer}>
             <img src={post.imageUrl} alt="" style={postImage} />
-            <h3>{post.title}</h3>
+            <h3 style={postTitle}>{post.title}</h3>
           </div>
         )
       })}
@@ -49,6 +50,8 @@ function Posts() {
 }
 
 const heading = { margin: '20px 0' }
+const postContainer = { padding: '20px 0 0', borderBottom: '1px solid #ddd' }
 const postImage = { width: 400 }
+const postTitle = { marginTop: 4 }
 
 export default Posts
